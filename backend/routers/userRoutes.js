@@ -5,8 +5,10 @@ const {
   getUserById,
   getUsers,
 } = require("../controllers/userController");
+const validate = require("../middleware/validateMiddleware");
+const { createUserSchema } = require("../validators/userValidator");
 
-router.post("/", createUser);
+router.post("/", validate(createUserSchema), createUser);
 router.get("/", getUsers);
 router.get("/:id", getUserById);
 
