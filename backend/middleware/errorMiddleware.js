@@ -1,3 +1,5 @@
+const logger = require("../config/logger");
+
 // Handles routes that don't exist
 const notFound = (req, res, next) => {
   const error = new Error(`Route not found - ${req.originalUrl}`);
@@ -22,6 +24,10 @@ const errorHandler = (err, req, res, next) => {
     statusCode = 400;
     message: `Duplicate value entered for ${Object.keys(err.keyValue)} field`;
   }
+
+  logger.error(
+    `${statusCode} - ${message} - ${req.originalUrl} - ${req.method}`,
+  );
 
   res.status(statusCode).json({
     message,

@@ -4,6 +4,7 @@ const cors = require("cors");
 const connectDB = require("./config/db");
 const userRouter = require("./routers/userRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
+const morgan = require("morgan");
 
 dotenv.config();
 connectDB();
@@ -12,6 +13,10 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+if (process.env.NODE_ENV !== "production") {
+  app.use(morgan("dev"));
+}
 
 app.use("/api/users", userRouter);
 
