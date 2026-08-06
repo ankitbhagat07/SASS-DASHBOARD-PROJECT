@@ -5,6 +5,7 @@ const connectDB = require("./config/db");
 const userRouter = require("./routers/userRoutes");
 const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 const morgan = require("morgan");
+const authRoutes = require("./routers/authRoutes");
 
 dotenv.config();
 connectDB();
@@ -19,6 +20,7 @@ if (process.env.NODE_ENV !== "production") {
 }
 
 app.use("/api/users", userRouter);
+app.use("/api/auth", authRoutes);
 
 app.get("/", (req, res) => {
   res.send("API is running...");

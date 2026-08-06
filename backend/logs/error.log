@@ -1,1 +1,10 @@
 2026-08-06T02:54:16.321Z [ERROR]; 404 - Resource not found - /api/users/12345 - GET
+2026-08-06T03:14:07.368Z [ERROR]; 404 - Route not found - /api/auth/signup - /api/auth/signup - POST
+2026-08-06T03:15:05.629Z [ERROR]; 500 - email is not defined - /api/auth/signup - POST
+2026-08-06T03:15:24.842Z [ERROR]; 500 - email is not defined - /api/auth/signup - POST
+2026-08-06T03:17:47.750Z [ERROR]; 500 - email is not defined - /api/auth/signup - POST
+2026-08-06T03:22:04.075Z [ERROR]; 500 - next is not a function - /api/auth/signup - POST
+2026-08-06T03:33:41.842Z [ERROR]; 400 - E11000 duplicate key error collection: test.users index: username_1 dup key: { username: null } - /api/auth/signup - POST
+2026-08-06T03:33:59.299Z [ERROR]; 400 - E11000 duplicate key error collection: test.users index: username_1 dup key: { username: null } - /api/auth/signup - POST
+2026-08-06T03:34:10.932Z [ERROR]; 400 - E11000 duplicate key error collection: test.users index: username_1 dup key: { username: null } - /api/auth/signup - POST
+2026-08-06T03:35:16.917Z [ERROR]; 400 - E11000 duplicate key error collection: test.users index: username_1 dup key: { username: null } - /api/auth/signup - POST
