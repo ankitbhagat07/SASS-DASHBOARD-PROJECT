@@ -6,4 +6,9 @@ const createUserSchema = z.object({
   password: z.string().min(6, "Password must be at least 6 characters"),
 });
 
-module.exports = { createUserSchema };
+const loginSchema = z.object({
+  email: z.string().email("Invalid email addresss"),
+  password: z.string().min(1, "password is required"),
+});
+
+module.exports = { createUserSchema, loginSchema };
